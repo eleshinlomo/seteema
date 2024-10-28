@@ -1,7 +1,8 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import Ads from "@/components/ads";
+import ProductDisplay from "@/components/product";
 
 export const metadata: Metadata = {
   title: "Next.js Tables | TailAdmin - Next.js Dashboard Template",
@@ -9,16 +10,18 @@ export const metadata: Metadata = {
     "This is Next.js Tables page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
 };
 
-const AdsPage = () => {
+const ProductPage = () => {
   return (
     <DefaultLayout>
-      <Breadcrumb pageName="Top Ad Platform" />
+      <Breadcrumb pageName="Available Products" />
 
       <div className="flex flex-col gap-10">
-        <Ads />
+        
+        <ProductDisplay />
+        
       </div>
     </DefaultLayout>
   );
 };
 
-export default AdsPage;
+export default ProductPage;

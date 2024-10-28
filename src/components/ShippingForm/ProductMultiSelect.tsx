@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { productData } from "../product";
 
 interface Option {
   value: string;
@@ -11,12 +12,13 @@ interface DropdownProps {
   id: string;
 }
 
-const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
+const ProductMultiSelect: React.FC<DropdownProps> = ({ id }) => {
   const [options, setOptions] = useState<Option[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
   const [show, setShow] = useState(false);
   const dropdownRef = useRef<any>(null);
   const trigger = useRef<any>(null);
+  const [total,setTotal] = useState<number>(0)
 
   useEffect(() => {
     const loadOptions = () => {
@@ -93,18 +95,25 @@ const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
     return () => document.removeEventListener("click", clickHandler);
   });
 
+
+  const totalPrice = ()=>{
+    setTotal(selected.reduce((a, b)=> a + b, 0))
+  }
+
+  useEffect(()=>{
+    totalPrice()
+  }, [total])
+
   return (
     <div className="relative z-50">
       <label className="mb-3 block text-sm font-medium text-black dark:text-white">
-        Select products you will be buying.
+        Select the products you will be shipping.
       </label>
       <div>
-        <select className="hidden" id={id}>
-          <option value="1">Option 2</option>
-          <option value="2">Option 3</option>
-          <option value="3">Option 4</option>
-          <option value="4">Option 5</option>
-        </select>
+        {productData.map((product, index)=>
+        <select className="hidden" id={product.id}>
+          <option value={product.id}>{product.name}</option>
+        </select>)}
 
         <div className="flex flex-col items-center">
           <input name="values" type="hidden" defaultValue={selectedValues()} />
@@ -219,8 +228,9 @@ const MultiSelect: React.FC<DropdownProps> = ({ id }) => {
           </div>
         </div>
       </div>
+      <p className="py-2">Total Price: {total}</p>
     </div>
   );
 };
 
-export default MultiSelect;
+export default ProductMultiSelect;

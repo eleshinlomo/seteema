@@ -1,47 +1,57 @@
 import Image from "next/image";
 import { Product } from "@/types/product";
 
-const productData: Product[] = [
-  {
-    image: "/images/product/product-01.png",
-    name: "Apple Watch Series 7",
-    category: "Electronics",
-    price: 296,
+interface ProductDataProps {
+    id: string;
+    image: string;
+    name: string;
+    category: string;
+    price: number;
+    sold: number;
+    profit: number;
+}
+export const productData: ProductDataProps[] = [
+  { 
+    id: '1',
+    image: "/images/product/garri.jpg",
+    name: "Bag of Garri",
+    category: "food",
+    price: 100000,
     sold: 22,
     profit: 45,
   },
-  {
-    image: "/images/product/product-02.png",
-    name: "Macbook Pro M1",
-    category: "Electronics",
-    price: 546,
+  { id: '2',
+    image: "/images/product/rice.jpg",
+    name: "Bag of Rice",
+    category: "food",
+    price: 100000,
     sold: 12,
     profit: 125,
   },
-  {
-    image: "/images/product/product-03.png",
-    name: "Dell Inspiron 15",
-    category: "Electronics",
-    price: 443,
+  { id: '3',
+    image: "/images/product/beans.jpeg",
+    name: "Bag of Beans",
+    category: "food",
+    price: 270000,
     sold: 64,
     profit: 247,
   },
-  {
-    image: "/images/product/product-04.png",
-    name: "HP Probook 450",
-    category: "Electronics",
-    price: 499,
+  { id: '4',
+    image: "/images/product/yam.jpeg",
+    name: "Tuber of Yam",
+    category: "food",
+    price: 1000,
     sold: 72,
     profit: 103,
   },
 ];
 
-const TableTwo = () => {
+const ProductDisplay = () => {
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="px-4 py-6 md:px-6 xl:px-7.5">
         <h4 className="text-xl font-semibold text-black dark:text-white">
-          Top Products
+          Currently Available Products
         </h4>
       </div>
 
@@ -90,14 +100,14 @@ const TableTwo = () => {
           </div>
           <div className="col-span-1 flex items-center">
             <p className="text-sm text-black dark:text-white">
-              ${product.price}
+              N{product.price}
             </p>
           </div>
           <div className="col-span-1 flex items-center">
             <p className="text-sm text-black dark:text-white">{product.sold}</p>
           </div>
           <div className="col-span-1 flex items-center">
-            <p className="text-sm text-meta-3">${product.profit}</p>
+            <p className="text-sm text-meta-3">N{product.profit}</p>
           </div>
         </div>
       ))}
@@ -105,4 +115,4 @@ const TableTwo = () => {
   );
 };
 
-export default TableTwo;
+export default ProductDisplay;

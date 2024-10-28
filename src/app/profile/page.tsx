@@ -71,7 +71,7 @@ const Profile = () => {
             <div className="relative z-30 mx-auto -mt-22 h-30 w-full max-w-30 rounded-full bg-white/20 p-1 backdrop-blur sm:h-44 sm:max-w-44 sm:p-3">
               <div className="relative drop-shadow-2">
                 <Image
-                  src={"/images/user/user-06.png"}
+                  src={"/images/user/woman.jpg"}
                   width={160}
                   height={160}
                   style={{
@@ -114,11 +114,11 @@ const Profile = () => {
                 </label>
               </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-8">
               <h3 className="mb-1.5 text-2xl font-semibold text-black dark:text-white">
-                Danish Heilium
+                Teema Loreal
               </h3>
-              <p className="font-medium">Ui/Ux Designer</p>
+              <p className="font-medium">Business Owner</p>
               <div className="mx-auto mb-5.5 mt-4.5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2.5 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
                 <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                   <span className="font-semibold text-black dark:text-white">
@@ -128,13 +128,13 @@ const Profile = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
                   <span className="font-semibold text-black dark:text-white">
-                    129K
+                    12K
                   </span>
                   <span className="text-sm">Followers</span>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1 px-4 xsm:flex-row">
                   <span className="font-semibold text-black dark:text-white">
-                    2K
+                    1K
                   </span>
                   <span className="text-sm">Following</span>
                 </div>
@@ -145,7 +145,7 @@ const Profile = () => {
                   About Me
                 </h4>
                 <p className="mt-4.5">
-                  My name is Teema.
+                  My name is Teema. I am the owner of Seteema.
                 </p>
               </div>
 
