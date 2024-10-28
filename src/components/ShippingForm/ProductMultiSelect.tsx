@@ -96,13 +96,7 @@ const ProductMultiSelect: React.FC<DropdownProps> = ({ id }) => {
   });
 
 
-  const totalPrice = ()=>{
-    setTotal(selected.reduce((a, b)=> a + b, 0))
-  }
 
-  useEffect(()=>{
-    totalPrice()
-  }, [total])
 
   return (
     <div className="relative z-50">
@@ -111,7 +105,7 @@ const ProductMultiSelect: React.FC<DropdownProps> = ({ id }) => {
       </label>
       <div>
         {productData.map((product, index)=>
-        <select className="hidden" id={product.id}>
+        <select className="hidden" id={product.id} key={index}>
           <option value={product.id}>{product.name}</option>
         </select>)}
 
